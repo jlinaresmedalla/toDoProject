@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public interface ToDoService {
 
     ToDoDto addToDO(ToDoDto toDoDto);
-
+    ToDoDto returnToDoDto(Long id);
 
 }
