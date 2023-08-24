@@ -1,5 +1,6 @@
 package com.example.todomanagement.entity;
 
+import com.example.todomanagement.dto.ToDoDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,5 +23,11 @@ public class ToDo {
     @Column(nullable = false)
     private String description;
     private boolean completed;
+
+    public ToDo (ToDoDto toDoDto) {
+        this.title = toDoDto.title();
+        this.description = toDoDto.description();
+        this.completed = toDoDto.completed();
+    }
 
 }
