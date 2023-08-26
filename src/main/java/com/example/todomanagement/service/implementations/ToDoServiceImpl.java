@@ -65,4 +65,14 @@ public class ToDoServiceImpl implements ToDoService {
         toDoRepository.delete(toDo);
     }
 
+    @Override
+    public void updateStatus(Long id, boolean completed) {
+        //Find ToDo jpa entity by id
+        ToDo toDo = toDoRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("ToDo not found with id " + id));
+        //Update ToDo jpa entity
+        toDo.setCompleted(completed);
+        //Save ToDo jpa entity to database
+        toDoRepository.save(toDo);
+    }
+
 }

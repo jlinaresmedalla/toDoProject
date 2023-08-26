@@ -12,4 +12,5 @@ public interface ToDoService {
     List<ToDoDto> returnAllToDoDto();
     ToDoDto updateToDoDto(Long id, ToDoDto toDoDto);
     void deleteToDoDto(Long id);
+    void updateStatus(Long id, boolean completed);
 }
